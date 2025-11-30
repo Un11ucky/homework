@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица предметов</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th,
+        td {
+            border: 1px solid #ca21a6;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #5e034a;
+            color: rgb(0, 0, 0);
+        }
+
+        tr:nth-child(even) {
+            background-color: #949494;
+        }
+
+        tr:hover {
+            background-color: #8b3187;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Инвентарь игрока</h2>
+
+    <table id="itemsTable">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Уровень</th>
+                <th>Урон</th>
+                <th>Защита</th>
+                <th>Редкость</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Здесь будут предметы из JS -->
+        </tbody>
+    </table>
+
+    <script>
+        // Массив предметов
+        const items = [
+            { name: "Меч света", type: "Оружие", level: 50, damage: 120, defense: 0, rarity: "Легендарный" },
+            { name: "Щит дракона", type: "Броня", level: 45, damage: 0, defense: 95, rarity: "Эпический" },
+            { name: "Кольцо силы", type: "Аксессуар", level: 30, damage: 25, defense: 10, rarity: "Редкий" },
+            { name: "Зелье здоровья", type: "Расходник", level: 1, damage: 0, defense: 0, rarity: "Обычный" },
+            { name: "Посох мудреца", type: "Оружие", level: 60, damage: 80, defense: 20, rarity: "Легендарный" },
+            { name: "Плащ невидимости", type: "Броня", level: 55, damage: 0, defense: 40, rarity: "Эпический" }
+        ];
+
+        // Функция для создания таблицы
+        function createItemsTable() {
+            const tbody = document.getElementById('tableBody');
+
+            items.forEach(item => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+      <td>${item.name}</td>
+      <td>${item.type}</td>
+      <td>${item.level}</td>
+      <td>${item.damage || '-'}</td>
+      <td>${item.defense || '-'}</td>
+      <td><span style="color: ${getRarityColor(item.rarity)}">${item.rarity}</span></td>
+    `;
+
+                tbody.appendChild(row);
+            });
+        }
+
+        // Цвета для редкости (можно расширить)
+        function getRarityColor(rarity) {
+            switch (rarity) {
+                case "Легендарный": return "#ff8000";
+                case "Эпический": return "#a335ee";
+                case "Редкий": return "#0070dd";
+                case "Обычный": return "#ffffff";
+                default: return "#ffffff";
+            }
+        }
+
+        // Запускаем после загрузки страницы
+        window.onload = createItemsTable;
+    </script>
+
+</body>
+
+</html>
