@@ -1,3 +1,45 @@
-h1 {
-    color:brown
+
+h1,
+h2,
+h3 {
+    color: rgb(165, 9, 9) 
 }
+[style="display: flex; justify-content: center;"] {
+        color: aqua;
+}
+[href^="http://"] {
+color: rgb(5, 236, 55);
+}
+[href$=".ru"] {
+    
+}
+body{
+color: #c608ec;
+font-family: calibri ;
+font-weight: 700;
+font-size: 20px;
+line-height: 1;
+background-image: linear-gradient(rgb(255, 136, 0) 10%, rgb(4, 117, 9)30%, rgb(255, 153, 0) 98%);
+    }
+/* 
+    шрифт и его функции
+*/
+   
+.box {
+    width: 100px;
+    height: auto;
+    margin: 20px;
+    padding: 30px;
+    border-inline: 5px solid rgb(9, 185, 185);
+    border-bottom: 5px solid rgb(185, 21, 9);
+    border-style: double;
+    border-radius: 10%;
+    outline: 5px solid rgb(0, 255, 98);
+    outline-offset: 10px;
+    box-shadow: 5px 10px 20px rgb(0, 3, 1) inset;  
+}
+table{
+}
+/* 
+    чем ниже тем главнее 
+*/
