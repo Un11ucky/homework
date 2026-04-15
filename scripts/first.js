@@ -1,4 +1,4 @@
-console.log('hello world')
+// console.log('hello world')
 // константа массива
 const bruh = ['hi']
 
@@ -19,7 +19,7 @@ const rar2 = {
 function sameObject(objectA, objectB) {
     let isEqual = false
     for (const key in objectA) {
-        console.log(key)
+        // console.log(key)
         if (!Object.hasOwn(objectB, key)) {
             break
         }
@@ -34,7 +34,7 @@ function sameObject(objectA, objectB) {
     }
     return isEqual
 }
-console.log(sameObject(rar, rar2))
+// console.log(sameObject(rar, rar2))
 
 function sameObject2(objectA, objectB) {
     let isEqual = false
@@ -54,7 +54,7 @@ function sameObject2(objectA, objectB) {
     }
     return isEqual
 }
-console.log(sameObject2(rar, rar2))
+// console.log(sameObject2(rar, rar2))
 
 function concat(...args) {
     const strings = []
@@ -65,7 +65,7 @@ function concat(...args) {
     return strings.join(' ')
 
 }
-console.log(concat(1,'tata',[],{},'haha',()=>1,'asdasd',5213231,{},));
+// console.log(concat(1,'tata',[],{},'haha',()=>1,'asdasd',5213231,{},));
 // {} - объект
 // '' - строка
 // [] - массив
@@ -75,11 +75,24 @@ function concat2(...args) {
     let strings = ''
     for (const value of args) {
         if (typeof value === 'string')
-           strings += '-' + value
+            strings += '-' + value
     }
     return strings.slice(0, -1)
 
 }
-console.log(concat2(1,'dada',[],{},'haha',()=>1,'asdasd',5213231,{},));
+// console.log(concat2(1,'dada',[],{},'haha',()=>1,'asdasd',5213231,{},));
 
 const str = 'test' // ['t', 'e', 's', 't']
+
+// ДЗ
+
+const userName = 'Unlucky'
+const age = 26
+const isStudent = true
+let favoriteColor
+const phone = null
+const address = {
+    city: 'Kaliningrad',
+    country: 'Russia'
+}
+// console.log (userName, age, isStudent, favoriteColor, phone, address)
